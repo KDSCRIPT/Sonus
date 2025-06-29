@@ -55,6 +55,7 @@ pyparsing==3.2.3
 pytest==8.4.1
 pytest-mock==3.14.1
 python-dateutil==2.9.0.post0
+python-dotenv==1.1.1
 python-jose==3.5.0
 python-jwt==4.1.0
 realtime==2.5.3
