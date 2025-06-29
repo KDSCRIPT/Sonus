@@ -4,6 +4,7 @@ from views.download_views import download_bp
 from views.file_views import file_bp
 from views.folder_views import folder_bp
 from views.tts_views import tts_bp
+import os 
 
 # Initialize Flask
 app = Flask(__name__)
@@ -14,6 +15,6 @@ app.register_blueprint(file_bp)
 app.register_blueprint(folder_bp)
 app.register_blueprint(tts_bp)
 
-# --- MAIN ---
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))  # Render sets PORT
+    app.run(host='0.0.0.0', port=port)
