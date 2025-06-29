@@ -83,9 +83,7 @@ supabase==2.16.0
 supafunc==0.10.1
 sympy==1.14.0
 tokenizers==0.21.2
-torch==2.7.1
 tqdm==4.67.1
-transformers==4.53.0
 typing-inspection==0.4.1
 typing_extensions==4.14.0
 uritemplate==4.2.0

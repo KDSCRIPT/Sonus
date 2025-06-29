@@ -79,7 +79,7 @@ export default function Home() {
         console.error("No Clerk token found.");
         return;
       }
-      
+
       const response = await fetch(
         "https://sonus.onrender.com/api/tts/recommend-options",
         {
@@ -94,33 +94,35 @@ export default function Home() {
 
       if (response.ok) {
         const data = await response.json();
-        
+
         // Handle the new response format - extract sentence_configs if it exists
         let recommendations: TTSRecommendation[];
-        
+
         if (data.sentence_configs && Array.isArray(data.sentence_configs)) {
           // Convert sentence_configs format to TTSRecommendation format
-          recommendations = data.sentence_configs.map((config: any, index: number) => ({
-            line: config.text,
-            config: {
-              channelType: config.channelType,
-              encodeAsBase64: config.encodeAsBase64,
-              format: config.format,
-              multiNativeLocale: config.multiNativeLocale,
-              pitch: config.pitch,
-              rate: config.rate,
-              sampleRate: config.sampleRate,
-              speaker: config.speaker,
-              style: config.style,
-              text: config.text,
-              variation: config.variation,
-              voiceId: config.voiceId,
-            },
-            analysis: null,
-            reasoning: null,
-            selected_voice: config.voiceId,
-            success: true,
-          }));
+          recommendations = data.sentence_configs.map(
+            (config: any, index: number) => ({
+              line: config.text,
+              config: {
+                channelType: config.channelType,
+                encodeAsBase64: config.encodeAsBase64,
+                format: config.format,
+                multiNativeLocale: config.multiNativeLocale,
+                pitch: config.pitch,
+                rate: config.rate,
+                sampleRate: config.sampleRate,
+                speaker: config.speaker,
+                style: config.style,
+                text: config.text,
+                variation: config.variation,
+                voiceId: config.voiceId,
+              },
+              analysis: null,
+              reasoning: null,
+              selected_voice: config.voiceId,
+              success: true,
+            })
+          );
         } else if (Array.isArray(data)) {
           // Handle direct array format
           recommendations = data;
@@ -128,11 +130,14 @@ export default function Home() {
           console.error("Unexpected response format:", data);
           return;
         }
-        
+
         setTTSRecommendations(recommendations);
         setCurrentStep("edit");
       } else {
-        console.error("Failed to get TTS recommendations:", response.statusText);
+        console.error(
+          "Failed to get TTS recommendations:",
+          response.statusText
+        );
       }
     } catch (error) {
       console.error("Error getting TTS recommendations:", error);
