@@ -107,7 +107,7 @@ export default function TTSEditor({
         : `${fileName}.mp3`;
 
       const response = await fetch(
-        `http://localhost:5000/api/filesystem/list-directory?storage_bucket=murf-audiofiles`,
+        `https://sonus.onrender.com/api/filesystem/list-directory?storage_bucket=murf-audiofiles`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -174,7 +174,7 @@ export default function TTSEditor({
       }));
 
       const response = await fetch(
-        "http://localhost:5000/api/tts/export-audio",
+        "https://sonus.onrender.com/api/tts/export-audio",
         {
           method: "POST",
           headers: {
@@ -216,11 +216,14 @@ export default function TTSEditor({
         console.error("No Clerk token found.");
         return;
       }
-      const response = await fetch("http://localhost:5000/api/tts/voices", {
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-        },
-      });
+      const response = await fetch(
+        "https://sonus.onrender.com/api/tts/voices",
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         setVoices(data.voices);
@@ -299,7 +302,7 @@ export default function TTSEditor({
       };
 
       const response = await fetch(
-        "http://localhost:5000/api/audiosystem/play",
+        "https://sonus.onrender.com/api/audiosystem/play",
         {
           method: "POST",
           headers: {
@@ -355,7 +358,7 @@ export default function TTSEditor({
   //       return;
   //     }
   //     const response = await fetch(
-  //       "http://localhost:5000/api/tts/export-audio",
+  //       "https://sonus.onrender.com/api/tts/export-audio",
   //       {
   //         method: "POST",
   //         headers: {

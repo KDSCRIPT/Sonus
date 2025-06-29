@@ -81,7 +81,7 @@ export default function Home() {
       }
       
       const response = await fetch(
-        "http://localhost:5000/api/tts/recommend-options",
+        "https://sonus.onrender.com/api/tts/recommend-options",
         {
           method: "POST",
           headers: {

@@ -173,7 +173,7 @@ export default function FileManager() {
       delete headers["Content-Type"];
 
       const response = await fetch(
-        `http://localhost:5000/api/filesystem/list-directory?${params}`,
+        `https://sonus.onrender.com/api/filesystem/list-directory?${params}`,
         { headers }
       );
       console.log(response);
@@ -217,7 +217,7 @@ export default function FileManager() {
       delete headers["Content-Type"];
 
       const response = await fetch(
-        `http://localhost:5000/api/filesystem/list-directory?${params}`,
+        `https://sonus.onrender.com/api/filesystem/list-directory?${params}`,
         { headers }
       );
 
@@ -253,7 +253,7 @@ export default function FileManager() {
   const deleteItem = async (item: FileItem) => {
     try {
       const headers = await getAuthHeaders();
-      const endpoint = "http://localhost:5000/api/filesystem/file";
+      const endpoint = "https://sonus.onrender.com/api/filesystem/file";
       const body = { path: `${item.name}` };
 
       const response = await fetch(
@@ -288,7 +288,7 @@ export default function FileManager() {
 
     try {
       const headers = await getAuthHeaders();
-      const endpoint = "http://localhost:5000/api/filesystem/file";
+      const endpoint = "https://sonus.onrender.com/api/filesystem/file";
       const body = {
         old_path: editingItem.name,
         new_path: newName,

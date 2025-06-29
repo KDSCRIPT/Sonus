@@ -82,7 +82,7 @@ export default function FileUpload({ onFileProcessed }: FileUploadProps) {
           return;
         }
         const response = await fetch(
-          "http://localhost:5000/api/filesystem/file",
+          "https://sonus.onrender.com/api/filesystem/file",
           {
             method: "POST",
             body: formData,
