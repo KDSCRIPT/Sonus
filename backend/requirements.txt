@@ -37,6 +37,7 @@ Jinja2==3.1.6
 jsonschema==4.24.0
 jsonschema-specifications==2025.4.1
 jwcrypto==1.5.6
+lxml==6.0.0
 MarkupSafe==3.0.2
 murf==2.0.0
 packaging==25.0
@@ -52,9 +53,11 @@ pydantic_core==2.33.2
 Pygments==2.19.2
 PyJWT==2.10.1
 pyparsing==3.2.3
+PyPDF2==3.0.1
 pytest==8.4.1
 pytest-mock==3.14.1
 python-dateutil==2.9.0.post0
+python-docx==1.2.0
 python-dotenv==1.1.1
 python-jose==3.5.0
 python-jwt==4.1.0
