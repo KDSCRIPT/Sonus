@@ -1,0 +1,22 @@
+TODO:
+recommendation engine gives different voices
+
+
+make params restricted and work
+
+folder management
+Refine token estimator
+agentops
+Combine pages
+
+
+unique file names(done)
+play audio(streaming)(done)
+File namangement(done)
+Play existing audio(completed)
+make text split scrollable(done)
+Loading screen in recommend config(done)
+Loading for exporting audio(done)
+No clerk(Clerk auth token code needs to be reusable(code is not dry))
+
+
