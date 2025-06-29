@@ -8,7 +8,7 @@ import os
 
 # Initialize Flask
 app = Flask(__name__)
-CORS(app,resources={r"/*": {"origins": ["http://localhost:3000"]}})
+CORS(app,resources={r"/*": {"origins": ["http://localhost:3000","https://sonusmurf.vercel.app"]}})
 
 app.register_blueprint(download_bp) 
 app.register_blueprint(file_bp) 
