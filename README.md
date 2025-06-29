@@ -1,4 +1,4 @@
-Sonus 🎧✨
+# Sonus 🎧✨
 
 AI-powered, immersive audiobook creation with granular voice control, powered by Murf AI.
 Transform your stories into lifelike audio, one sentence at a time.
